@@ -10,7 +10,7 @@ const App = () => {
     <>
       <MainLayouts>
         <Albums
-          title="Image Api"
+          title="Image Api Dari Dea Course"
           description="we fetch random api from third party."
         />
       </MainLayouts>
