@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// parent component
 
-function App() {
+import { React, useEffect, useRef, useState } from "react";
+import { Albums } from "./components/Albums/main.albums";
+import { MainLayouts } from "./components/Layouts/main.layouts";
+// import { Testing } from "./components/images";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MainLayouts>
+        <Albums
+          title="Image Api"
+          description="we fetch random api from third party."
+        />
+      </MainLayouts>
+    </>
   );
-}
+};
 
 export default App;
