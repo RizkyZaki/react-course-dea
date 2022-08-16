@@ -1,18 +1,28 @@
 // parent component
 
-import { React, useEffect, useRef, useState } from "react";
+import { React } from "react";
 import { Albums } from "./components/Albums/main.albums";
 import { MainLayouts } from "./components/Layouts/main.layouts";
 // import { Testing } from "./components/images";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <>
       <MainLayouts>
-        <Albums
-          title="Image Api Dari Dea Course"
-          description="we fetch random api from third party."
-        />
+        <Router>
+          <Routes>
+            <Route path="/" element={<h1>HOMEPAGE</h1>} />
+            <Route path="/albums" element={<Albums />} />
+            <Route path="/posts" element={<h1>POSTING</h1>} />
+            <Route
+              path="*"
+              element={
+                <h1 className="text-center text-danger">404 NOT FOUND</h1>
+              }
+            />
+          </Routes>
+        </Router>
       </MainLayouts>
     </>
   );
